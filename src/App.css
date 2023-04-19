@@ -74,7 +74,12 @@ img {
   height: 40vh;
   padding: 10px;
   border-radius: 15px;
-  box-shadow: rgba(65,105,224, 0.56) 0px 0px 75px 20px;
+  box-shadow: rgba(65,105,224, 0.56) 0px 0px 25px 15px;
   backdrop-filter: blur(8px);
+  text-transform: none;
 }
 
+.modalButton {
+  display: flex;
+  justify-content: flex-end;
+}

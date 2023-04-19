@@ -10,7 +10,7 @@ export default function HyruleList() {
         <ul>
             {compendium.data?.treasure.map((data) => (
                 <div className="listItems"> 
-                    <li>{data.name}</li>
+                    <li key={data.name}>{data.name}</li>
                     <img 
                         key={data.id}
                         src={data.image}
@@ -18,7 +18,7 @@ export default function HyruleList() {
                         onClick={() => setShowModal(true)}
                     /> 
                     {showModal && createPortal(
-                        <ModalContent onClose={() => setShowModal(false)} />,
+                        <ModalContent modalProp={data.id} onClose={() => setShowModal(false)} />,
                         document.body
                     )}
                 </div>
