@@ -1,26 +1,22 @@
-import { useContext } from "react";
-import { CompendiumContext } from "./CompendiumContext";
-
-export default function ModalContent ({onClose}) {
-    const compendium = useContext(CompendiumContext);
-    console.log(compendium);
-    compendium.data.treasure.map((data) => {
-        if (data.name === data.name) {
-            return (
+export default function ModalContent ({onClose, item}) {
+    console.log("item", item);
+    return (
+        <div className="modal">
+            <div className="modal-content">
                 <ul>
                     <div className="listItems"> 
-                        {<li>{data.name}</li>
-                        /* <li key={data.id}>{data.description}</li>
-                        <li key={data.id}>{data.common_locations}</li> */}
-                    <img
-                        key={data.id} 
-                        src={data.image}
-                        alt="API made an oopsie"
-                    /> 
+                        <li>{item.name}</li>
+                        <li>{item.description}</li>
+                        <li>{item.common_locations}</li>
+                        <img
+                            key={item.id} 
+                            src={item.image}
+                            alt="API made an oopsie"
+                        /> 
                     </div>
                     <button onClick={onClose}>I'm Good</button>
                 </ul>  
-            );
-        } 
-    })
+            </div>
+        </div>
+    );
 }
