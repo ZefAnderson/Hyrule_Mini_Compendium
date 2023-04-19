@@ -1,0 +1,80 @@
+body {
+  background-color: #282c34;
+  color: royalblue;
+  font-family: "HyliaSerifBeta";
+}
+
+.App {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-transform: capitalize;
+  color:ivory;
+}
+
+.App-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2.5em;
+  padding-top: 25px;
+  margin-bottom: 10px;
+}
+
+.NavLinkList {
+  margin: 5px;
+  padding: 3px;
+  color: saddlebrown;
+  background-color:burlywood;
+  font-weight: bold;
+  font-size: 1.75 em;
+  font-family: "HyliaSerifBeta";
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  border-radius: 3px;
+}
+
+.NavLinkList.active {
+  text-decoration: none;
+  padding: 8px;
+}
+
+.listItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+img {
+  margin-top: 10px;
+  max-width: 250px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 25vh;
+}
+
+.Modal {
+  position: fixed;
+  z-index: 99;
+  background-color: #282c34;
+  top: 25vh;
+  left: 30vw;
+  width: 40vw;
+  height: 40vh;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: rgba(65,105,224, 0.56) 0px 0px 75px 20px;
+  backdrop-filter: blur(8px);
+}
+
