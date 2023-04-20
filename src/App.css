@@ -71,15 +71,27 @@ img {
   top: 25vh;
   left: 30vw;
   width: 40vw;
-  height: 40vh;
+  height: 50vh;
   padding: 10px;
   border-radius: 15px;
   box-shadow: rgba(65,105,224, 0.56) 0px 0px 25px 15px;
-  backdrop-filter: blur(8px);
   text-transform: none;
+}
+
+.modalImg {
+  max-height: 75px;
 }
 
 .modalButton {
   display: flex;
   justify-content: flex-end;
+  max-height: 25px;
+  font-family: "HyliaSerifBeta";
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+  rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+  rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  border-radius: 3px;
+  color: saddlebrown;
+  background-color:burlywood;
 }
+

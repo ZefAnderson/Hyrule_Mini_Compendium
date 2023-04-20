@@ -1,28 +1,28 @@
 import { useContext, useState } from 'react';
-import { createPortal } from 'react-dom';
 import { CompendiumContext } from '../CompendiumContext';
-import ModalContent from '../modalcontent';
+import TreasureModal from '../Modals/treasureModal';
 
 export default function HyruleList() {
-    const [showModal, setShowModal] = useState(false);
+    const [modalData, setModalData] = useState(null);
     const compendium = useContext(CompendiumContext);
     return (
         <ul>
             {compendium.data?.treasure.map((data) => (
-                <div className="listItems"> 
-                    <li key={data.name}>{data.name}</li>
+                <div 
+                className="listItems" 
+                key={data.id}>
+                    <li>{data.name}</li>
                     <img 
                         key={data.id}
                         src={data.image}
                         alt="API made an oopsie"
-                        onClick={() => setShowModal(true)}
+                        onClick={() => setModalData(data)}
                     /> 
-                    {showModal && createPortal(
-                        <ModalContent modalProp={data.id} onClose={() => setShowModal(false)} />,
-                        document.body
-                    )}
                 </div>
             ))}
+            {modalData && 
+                <TreasureModal onClose={() => setModalData(null)} item={modalData} />
+            }       
         </ul>  
     );
 };
