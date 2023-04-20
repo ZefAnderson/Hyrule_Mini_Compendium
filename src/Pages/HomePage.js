@@ -1,5 +1,5 @@
 import { LinkList } from '../Lists/LinkList';
-import HyruleList from '../Lists/HyruleList'
+import HyruleList from '../Lists/TreasurePageList'
 
 export function HomePage() {
     return (

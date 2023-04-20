@@ -1,5 +1,37 @@
 export default function TreasureModal ({onClose, item}) {
-    console.log(item)
+    console.log(item.drops);
+    let locations = "";
+    for (let i = 0; i < item.common_locations.length -2; i++) {
+        locations += item.common_locations[i] + ", "
+    }
+    if (item.common_locations.length > 1) {
+        let secondToLast = item.common_locations[item.common_locations.length - 2];
+        locations += " " + secondToLast + " ";
+        let last = item.common_locations[item.common_locations.length - 1];
+        locations += "and " + last;
+    } if (item.common_locations.length === 1) {
+        let last = item.common_locations[item.common_locations.length - 1];
+        locations += last;
+    } if (item.common_locations.length === 0) {
+        locations += "N/A"
+    }
+
+    let drops = "";
+    for (let i = 0; i < item.drops.length -2; i++) {
+        drops += item.drops[i] + ", "
+    }
+    if (item.drops.length > 1) {
+        let secondToLast = item.drops[item.drops.length - 2];
+        drops += " " + secondToLast + " ";
+        let last = item.drops[item.drops.length - 1];
+        drops += "and " + last;
+    } if (item.drops.length === 1) {
+        let last = item.drops[item.drops.length - 1];
+        drops += last;
+    } if (item.drops.length === 0) {
+        drops += "N/A"
+    }
+
     return (
         <ul className="Modal">
             <div>
@@ -7,9 +39,9 @@ export default function TreasureModal ({onClose, item}) {
                 <br />
                 <li>{item.description}</li>
                 <br />
-                <li>Common Locations: {item.common_locations}</li>
+                <li>Common Locations: {locations}</li>
                 <br />
-                <li>Drops: {item.drops}</li>
+                <li>Drops: {drops}</li>
                 <br />
                 <img
                     className="modalImg"
