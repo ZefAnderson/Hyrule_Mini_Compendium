@@ -6,23 +6,27 @@ export default function HyruleList() {
     const [modalData, setModalData] = useState(null);
     const compendium = useContext(CompendiumContext);
     return (
-        <ul>
-            {compendium.data?.monsters.map((data) => (
-                <div 
-                className="listItems" 
-                key={data.id}>
-                    <li>{data.name}</li>
-                    <img 
-                        key={data.id}
-                        src={data.image}
-                        alt="API made an oopsie"
-                        onClick={() => setModalData(data)}
-                    /> 
-                </div>
-            ))}
+        <>
+            <div className={`behindModal ${modalData ? 'blur' : ''}`}>
+                <ul>
+                    {compendium.data?.monsters.map((data) => (
+                        <div 
+                        className="listItems" 
+                        key={data.id}>
+                            <li>{data.name}</li>
+                            <img 
+                                key={data.id}
+                                src={data.image}
+                                alt="API made an oopsie"
+                                onClick={() => setModalData(data)}
+                            /> 
+                        </div>
+                    ))}
+                </ul>
+            </div>
             {modalData && 
                 <MonstersModal onClose={() => setModalData(null)} item={modalData} />
             }       
-        </ul>  
+        </>
     );
 };
