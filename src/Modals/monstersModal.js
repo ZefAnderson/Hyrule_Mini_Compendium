@@ -41,24 +41,26 @@ export default function MonstersModal ({onClose, item}) {
         }
     }
     return (
-        <ul className="Modal">
-            <div>
-                <li>{item.name}</li>
-                <br />
-                <li>{item.description}</li>
-                <br />
-                <li>Common Locations: {locations}</li>
-                <br />
-                <li>Drops: {drops}</li>
-                <br />
-                <img
-                    className="modalImg"
-                    key={item.id}
-                    src={item.image}
-                    alt="API made an oopsie"
-                />
-            </div>
-            <button className="modalButton" onClick={onClose}>Done</button>
-        </ul>
+        <div className="modalBackground">
+            <ul className="modal">
+                <div className="modalContent">
+                    <li>{item.name}</li>
+                    <br />
+                    <li>{item.description}</li>
+                    <br />
+                    <li>Common Locations: {locations}</li>
+                    <br />
+                    <li>Drops: {drops}</li>
+                    <br />
+                    <img
+                        className="modalImg"
+                        key={item.id}
+                        src={item.image}
+                        alt="API made an oopsie"
+                    />
+                    <button className="modalButton" onClick={onClose}>Done</button>
+                </div>
+            </ul>
+        </div>
     );
 }

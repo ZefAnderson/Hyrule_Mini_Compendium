@@ -10,11 +10,9 @@ body {
 }
 
 ul {
-  list-style-type: none;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  list-style-type: none;
   text-transform: capitalize;
   color:ivory;
 }
@@ -50,6 +48,8 @@ ul {
 
 .listItems {
   display: flex;
+  position: relative;
+  z-index: 1;
   flex-direction: column;
   justify-content: center;
   padding: 50px;
@@ -71,16 +71,18 @@ img {
   margin-top: 25vh;
 }
 
-.Modal {
-  position: fixed;
-  align-content: center;
-  z-index: 99;
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  z-index: 999;
   background-color: #282c34;
-  top: 25vh;
-  left: 30vw;
-  width: 45vw;
-  height: 50vh;
   padding: 15px;
+  top: 25vh;
+  right: 30vw;
+  width: 40vw;
+  height: 50vh;
   border-radius: 15px;
   box-shadow: rgba(65,105,224, 0.56) 0px 0px 25px 15px;
   text-transform: none;
@@ -88,12 +90,12 @@ img {
 
 .modalImg {
   max-height: 75px;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
 
 .modalButton {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   max-height: 25px;
   font-family: "HyliaSerifBeta";
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
@@ -104,7 +106,20 @@ img {
   background-color:burlywood;
 }
 
-.behindModal.blur {
-  filter: blur(5px);
+.modalBackground {
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  top: 0%;
+  left: 0%;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
 }
 
+.modalContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
