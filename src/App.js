@@ -17,6 +17,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
 
+  // Pulls all info from the API to be mapped later
   useEffect(() => {
      fetch('https://botw-compendium.herokuapp.com/api/v2/all')
       .then((response) => {
@@ -27,8 +28,6 @@ export default function App() {
       })
       .then((data) => {
         setCompendium(data);
-        // console.log(data)
-        // console.log("c", compendium);
         setError(null);
       })
       .catch((err) => {
@@ -40,6 +39,7 @@ export default function App() {
       });
   }, [])
 
+  // Adds a loading animation when first opening and refreshing the page
   if (loading) {
     return (
       <div className="loading">
@@ -49,6 +49,7 @@ export default function App() {
     )
   } else {
 
+  // All the pages with the context provider wrapping them
   return (
     <CompendiumContext.Provider value={compendium}>
       <Routes>

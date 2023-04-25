@@ -1,5 +1,7 @@
 export default function TreasureModal ({onClose, item}) {
     console.log(item.drops);
+
+    // logic created to organize API data, add commas and avoid null errors
     let locations = "";
     for (let i = 0; i < item.common_locations.length -2; i++) {
         locations += item.common_locations[i] + ", "
@@ -33,7 +35,9 @@ export default function TreasureModal ({onClose, item}) {
     }
 
     return (
+        // the modal is full screen with a transparent blurred background
         <div className="modalBackground">
+            {/* the box inside the modal that appears to be the actual modal */}
             <ul className="modal">
                 <div className="modalContent">
                     <li>{item.name}</li>
